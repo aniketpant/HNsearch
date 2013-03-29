@@ -1,7 +1,7 @@
 require "nestful"
 
-module HNSearch
-  class HNSearchAPI
+module HNsearch
+  class HNsearchAPI
     def initialize
       @client = "http://api.thriftdb.com/api.hnsearch.com/"
     end
