@@ -1,4 +1,4 @@
-require 'nestful'
+require "nestful"
 
 module HNSearch
   class HNSearchAPI

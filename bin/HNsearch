@@ -1,3 +1,4 @@
-require 'HNsearch'
+#!/usr/bin/env ruby
 
+require 'HNsearch'
 HNsearch.new
