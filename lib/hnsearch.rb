@@ -1,2 +1,0 @@
-class HNsearch
-end
