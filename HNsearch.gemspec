@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "nestful"
   spec.add_runtime_dependency "thor"
+  spec.add_runtime_dependency "json"
 end

@@ -7,12 +7,12 @@ module HNsearch
     map "-u" => :users
     map "-i" => :items
 
-    desc "users [QUERY]", "list all users"
+    desc "users [QUERY]", "returns information of queried user"
     def users(query="")
       HNsearch::users(query)
     end
 
-    desc "items [QUERY]", "list all items"
+    desc "items [QUERY]", "returns information of queried item"
     def items(query="")
       HNsearch::items(query)
     end
