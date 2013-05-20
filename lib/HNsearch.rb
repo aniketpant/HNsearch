@@ -61,8 +61,8 @@ module HNsearch
       karma = e.fetch("karma")
 
       out = []
-      out.push "Username: " + e.fetch("username")
-      out.push "Karma: " + e.fetch("karma").to_s
+      out.push "Username: #{username}"
+      out.push "Karma: #{karma}"
       out.push "Profile URL: https://news.ycombinator.com/user?id=#{username}"
 
       puts out.join("\n")
@@ -79,8 +79,8 @@ module HNsearch
       username = e.fetch("username")
 
       out = []
-      out.push "Title: " + title
-      out.push "URL: " + url
+      out.push "Title: #{title}"
+      out.push "URL: #{url}"
       out.push "Posted by: https://news.ycombinator.com/user?id=#{username} (#{username})"
 
       puts out.join("\n")
