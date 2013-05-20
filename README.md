@@ -17,3 +17,7 @@ HNsearch commands:
   HNsearch items [QUERY]   # returns information of queried item
   HNsearch users [QUERY]   # returns information of queried user
 ```
+
+## Info
+
+This is not an official [hnsearch.com](http://hnsearch.com) gem.
