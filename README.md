@@ -1,5 +1,4 @@
-HNsearch
-========
+# HNsearch [![Gem Version](https://badge.fury.io/rb/HNsearch.png)](http://badge.fury.io/rb/HNsearch)
 
 A Ruby Gem for searching Hacker News via your terminal.
 
