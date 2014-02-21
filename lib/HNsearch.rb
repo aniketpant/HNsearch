@@ -14,7 +14,7 @@ module HNsearch
 
   def self.users(query)
     result = HNsearchAPI.new.query_users(query)
-    print_users filter(result)
+    print_user result
   end
 
   # Use this to search for items
@@ -28,7 +28,7 @@ module HNsearch
 
   def self.items(query)
     result = HNsearchAPI.new.query_items(query)
-    print_items filter(result)
+    print_items result
   end
 
   # This function fetches the results part of the JSON object
@@ -40,48 +40,32 @@ module HNsearch
   # Arguments:
   #   result: (JSON object)
 
-  def self.filter(result)
-    return result.fetch("results")
-  end
+  def self.print_user(result)
+    username = result.fetch("username")
+    karma = result.fetch("karma")
 
-  # This function fetches the results part of the JSON object
+    out = []
+    out.push "Username: #{username}"
+    out.push "Karma: #{karma}"
+    out.push "Profile URL: https://news.ycombinator.com/user?id=#{username}"
 
-  # Example:
-  #   >> HNsearch.filter(some_json_object)
-  #   => Returns result key-value from the JSON object
-  #
-  # Arguments:
-  #   result: (JSON object)
-
-  def self.print_users(result)
-    result.each {
-      |e|
-      e = e.fetch("item")
-      username = e.fetch("username")
-      karma = e.fetch("karma")
-
-      out = []
-      out.push "Username: #{username}"
-      out.push "Karma: #{karma}"
-      out.push "Profile URL: https://news.ycombinator.com/user?id=#{username}"
-
-      puts out.join("\n")
-      puts("\n")
-    }
+    puts out.join("\n")
+    puts("\n")
   end
 
   def self.print_items(result)
-    result.each {
+    result.fetch("hits").each {
       |e|
-      e = e.fetch("item")
       title = e.fetch("title")
       url = e.fetch("url")
-      username = e.fetch("username")
+      author = e.fetch("author")
+      points = e.fetch("points")
 
       out = []
       out.push "Title: #{title}"
       out.push "URL: #{url}"
-      out.push "Posted by: https://news.ycombinator.com/user?id=#{username} (#{username})"
+      out.push "Posted by: https://news.ycombinator.com/user?id=#{author} (#{author})"
+      out.push "Points: #{points}"
 
       puts out.join("\n")
       puts("\n")

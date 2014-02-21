@@ -4,17 +4,17 @@ require "json"
 module HNsearch
   class HNsearchAPI
     def initialize
-      @client = "http://api.thriftdb.com/api.hnsearch.com/"
+      @client = "http://hn.algolia.com/api/v1/"
     end
 
     def query_users(query)
-      api_response = Nestful.get "#{@client}users/_search?q=#{query}"
-      return JSON.parse(api_response)
+      api_response = Nestful.get "#{@client}users/#{query}"
+      return JSON.parse(api_response.to_json)
     end
 
     def query_items(query)
-      api_response = Nestful.get "#{@client}items/_search?q=#{query}"
-      return JSON.parse(api_response)
+      api_response = Nestful.get "#{@client}/search?query=#{query}&tags=story"
+      return JSON.parse(api_response.to_json)
     end
   end
 end
