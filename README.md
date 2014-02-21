@@ -19,4 +19,4 @@ HNsearch commands:
 
 ## Info
 
-This is not an official [hnsearch.com](http://hnsearch.com) gem.
+This is not an official gem for [hnsearch.com](http://hnsearch.com), now residing at [hn.algolia.coms](http://hn.algolia.com/).
